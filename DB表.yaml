@@ -1,0 +1,25 @@
+input:
+  generate:
+    interval: 5s
+    mapping: 'root = {}'
+  processors:
+    - http:
+        url: "http://localhost:8080/user/getUserList"
+        verb: GET
+        headers: {}
+
+    
+pipeline:
+  processors:
+    - mapping: |
+        root.test = this.data.index(0).username
+        
+output:
+  sql_raw:
+    driver: postgres
+    dsn: postgres://postgres:mypassword@localhost:5432/postgres?sslmode=disable
+    query: "INSERT INTO footable (name) VALUES (?);"
+    args_mapping: |
+      root = [
+        this.test
+      ]
