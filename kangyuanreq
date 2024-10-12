@@ -1,0 +1,21 @@
+{
+    "url": "${ip:hollycon-scheduler-back-end}:18082/eam/deviceFileInfoScheduler/sparePartsReplaceReminder",
+    "status": "1",
+    "jobname": "备件更换提醒",
+    "jobtype": "http",
+    "timeout": 3000,
+    "authtype": "none",
+    "describe": "备件更换提醒",
+    "executor": "默认执行器",
+    "jobclass": "备件更换类",
+    "returnkey": "data",
+    "createuser": "ganguoqiang",
+    "integrated": "KangYuan",
+    "retrycount": 1,
+    "isautostart": true,
+    "requesttype": "GET",
+    "returnvalue": "true",
+    "scheduletype": "cron",
+    "retryinterval": 3000,
+    "cronexpression": "0 10 14 * * ?"
+}
