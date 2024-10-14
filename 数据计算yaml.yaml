@@ -1,0 +1,46 @@
+input:
+  label: interval
+  generate:
+    interval: 0s
+    count: 1
+    mapping: root = {}
+pipeline:
+  processors:
+    - branch:
+        processors:
+          - sql_raw:
+              args_mapping: "[0]"
+              driver: postgres
+              dsn: postgres://postgres:123456@172.21.222.10:5432/postgres?sslmode=disable
+              query: SELECT
+                id,materialId,changeType,oldData,newData,changeReason,changeedBy,changeTimestamp,version,isDetele
+                FROM public.materialalter where 1 = $1 or id in('88','84','78')
+        result_map: root.database0 = this
+    - label: datacomputed
+      mapping: >
+        root = this
+
+        root.datacomputed = this.database0.map_each(item -> item.assign({ "res": if [item."id", item."isDetele"].contains(null) { null } else { (item."id".number() + item."isDetele".number()) } }))
+
+output:
+  sql_raw:
+    unsafe_dynamic_query: false
+    driver: postgres
+    dsn: postgres://postgres:123456@172.21.222.10:5432/postgres?sslmode=disable
+    init_statement: >-
+            CREATE TABLE IF NOT EXISTS ioit2.testtttttttt (
+              status int,
+              name varchar NOT NULL );
+            COMMENT ON COLUMN ioit2.testtttttttt.status IS '';
+
+            COMMENT ON COLUMN ioit2.testtttttttt.name IS '';
+    query: "INSERT INTO ioit2.testtttttttt (status,name) VALUES ($1,$2),($3,$4),($5,$6);"
+    args_mapping: |
+      root = [
+        this.datacomputed.index(0).res,
+        this.datacomputed.index(0).changeedby,
+        this.datacomputed.index(1).res,
+        this.datacomputed.index(1).changeedby,
+        this.datacomputed.index(2).res,
+        this.datacomputed.index(2).changeedby
+      ]
