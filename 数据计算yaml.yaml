@@ -1,7 +1,7 @@
 input:
   label: interval
   generate:
-    interval: 0s
+    interval: "0s"
     count: 1
     mapping: root = {}
 pipeline:
