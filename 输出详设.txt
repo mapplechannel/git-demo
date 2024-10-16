@@ -45,3 +45,6 @@
 
   countRegexp := regexp.MustCompile(`(?m)(generate:\s*\n\s*interval:.*)(\n\s*mapping:)`)
 	benthosYaml = countRegexp.ReplaceAllString(benthosYaml, `$1\n    count: 0$2`)
+
+  intervalRegexp := regexp.MustCompile(`(?m)(interval:\s*)([^ \n]+(?: [^ \n]+)*)`)
+	benthosYaml = intervalRegexp.ReplaceAllString(benthosYaml, `$1"0s"`)
