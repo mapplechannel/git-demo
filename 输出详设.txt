@@ -48,3 +48,32 @@
 
   intervalRegexp := regexp.MustCompile(`(?m)(interval:\s*)([^ \n]+(?: [^ \n]+)*)`)
 	benthosYaml = intervalRegexp.ReplaceAllString(benthosYaml, `$1"0s"`)
+
+
+CREATE TABLE "ioit"."job_info" (
+  "namespace" varchar(255) COLLATE "pg_catalog"."default",
+  "s_node" varchar(255) COLLATE "pg_catalog"."default",
+  "code" varchar(255) COLLATE "pg_catalog"."default",
+  "name" varchar(255) COLLATE "pg_catalog"."default",
+  "describe" varchar(255) COLLATE "pg_catalog"."default",
+  "schedule" varchar(255) COLLATE "pg_catalog"."default",
+  "schedule_details" varchar(255) COLLATE "pg_catalog"."default",
+  "schedule_cycle" varchar(255) COLLATE "pg_catalog"."default",
+  "schedule_unit" varchar(255) COLLATE "pg_catalog"."default",
+  "content" jsonb,
+  "cron_id" varchar(255) COLLATE "pg_catalog"."default",
+  "is_http" bool,
+  "canvas" jsonb,
+  "job_type" varchar(255) COLLATE "pg_catalog"."default",
+  "job_class" varchar(255) COLLATE "pg_catalog"."default",
+  "template" varchar(255) COLLATE "pg_catalog"."default",
+  "id" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
+  "status" int8,
+  "create_time" varchar(255) COLLATE "pg_catalog"."default",
+  "edite_time" varchar(255) COLLATE "pg_catalog"."default",
+  "create_user" varchar(255) COLLATE "pg_catalog"."default",
+  "is_auto_select_id" bool,
+  "cron_detail" jsonb,
+  "period_detail" jsonb
+)
+;
