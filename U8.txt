@@ -1,0 +1,72 @@
+CREATE TABLE production_task (
+    vrowno VARCHAR(10),              -- 序号
+    cbwrastunitid VARCHAR(10),        -- 实际计量单位
+    cbwrunitid VARCHAR(10),           -- 计量单位
+    nbwrastnum NUMERIC(10, 2),        -- 实际数量
+    nbwrnum NUMERIC(10, 2),           -- 计划数量
+    cbdeptvid VARCHAR(10),            -- 部门编码
+    cbwkid VARCHAR(50),               -- 工作中心编码
+    cbteamid VARCHAR(10),             -- 班组编码
+    cactivityid VARCHAR(10),          -- 活动编码
+    dtaskdate TIMESTAMP,              -- 任务日期时间
+    nstandnum NUMERIC(10, 2),         -- 标准数量
+    nactnum NUMERIC(10, 2)            -- 实际数量
+);
+type ProductionTask struct {
+    VrowNo       string    `json:"vrowno"`        // 序号
+    CbwrAstUnitId string    `json:"cbwrastunitid"` // 实际计量单位
+    CbwrUnitId   string    `json:"cbwrunitid"`    // 计量单位
+    NbwrAstNum   float64   `json:"nbwrastnum"`    // 实际数量
+    NbwrNum      float64   `json:"nbwrnum"`       // 计划数量
+    CbDeptVid    string    `json:"cbdeptvid"`     // 部门编码
+    CbWkId       string    `json:"cbwkid"`        // 工作中心编码
+    CbTeamId     string    `json:"cbteamid"`      // 班组编码
+    CActivityId  string    `json:"cactivityid"`   // 活动编码
+    DTaskDate    time.Time `json:"dtaskdate"`     // 任务日期时间
+    NStandNum    float64   `json:"nstandnum"`     // 标准数量
+    NActNum      float64   `json:"nactnum"`       // 实际数量
+}
+var DB *gorm.DB
+
+// 初始化数据库连接
+func initDB() {
+	var err error
+	// 使用 PostgreSQL 数据库
+	DB, err = gorm.Open("postgres", "host=localhost user=youruser dbname=yourdb password=yourpassword sslmode=disable")
+	if err != nil {
+		log.Fatalf("failed to connect to database: %v", err)
+	}
+	// 自动迁移
+	DB.AutoMigrate(&ProductionTask{})
+}
+
+// 保存生产任务数据到数据库
+func saveProductionTask(c *gin.Context) {
+	var task ProductionTask
+	if err := c.ShouldBindJSON(&task); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	if err := DB.Create(&task).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save task"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Task saved successfully"})
+}
+
+func main() {
+	initDB()
+	defer DB.Close()
+
+	r := gin.Default()
+
+	// 定义 POST 接口
+	r.POST("/api/tasks", saveProductionTask)
+
+	// 启动服务器
+	if err := r.Run(":8080"); err != nil {
+		log.Fatalf("Failed to run server: %v", err)
+	}
+}
