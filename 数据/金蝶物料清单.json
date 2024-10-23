@@ -1,0 +1,19 @@
+{
+    "FCreateOrgId": "ORG_ADMIN",
+    "FMATERIALID": "MATERIAL_001",
+    "FBOMCATEGORY": "类型A",
+    "FBOMUSE": "生产",
+    "FIsBaseUnit": true,
+    "FIsSystemSet": false,
+    "FName": "kingdee_bom",
+    "FPrecision": 2,
+    "FUNITID": "UNIT001",
+    "FMATERIALIDCHILD": "MATERIAL_CHILD_001",
+    "FISSUETYPE": "发料",
+    "FOWNERTYPEID": "OWNER001",
+    "FDOSAGETYPE": "用量",
+    "FUNITIDLOT": "LOT001",
+    "FMATERIALIDLOTBASED": "MATERIAL_LOT_001",
+    "FCOBYTYPE": "副产品",
+    "FMATERIALIDCOBY": "MATERIAL_COBY_001"
+}

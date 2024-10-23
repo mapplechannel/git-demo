@@ -1,0 +1,13 @@
+{
+    "FCreatorId": "USER001",
+    "FExtVar": "EXT_001",
+    "FOldNumber": "OLD_MATERIAL_001",
+    "FDescription": "电子元件",
+    "FMaterialGroup": "电子",
+    "FBaseProperty": "GROUP001",
+    "FMaterialSRC": "采购",
+    "FSpecification": "型号X",
+    "FPLMMaterialId": "PLM001",
+    "FNumber": "MATERIAL_001",
+    "FEqpClsID": "ATTR001"
+}

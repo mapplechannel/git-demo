@@ -1,0 +1,9 @@
+{
+    "FUseOrgId": "ORG001",
+    "FEffectDate": "2023-01-01 00:00:00",
+    "FName": "kingdee_work_center",
+    "FCreateOrgId": "ORG_ADMIN",
+    "FOptCtrlCodeID": "OPT001",
+    "FDeptID": "DEPT01",
+    "FExpireDate": "2024-01-01 00:00:00"
+}

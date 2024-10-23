@@ -212,3 +212,286 @@ CREATE TABLE u8_material_bom (
 
 
 
+CREATE TABLE kingdee_department (
+    fuseorgid VARCHAR(50),
+    fcreateorgid VARCHAR(50),
+    fname VARCHAR(100)
+);
+
+type KingdeeDepartment struct {
+    FUseOrgId   string `json:"fuseorgid"`
+    FCreateOrgId string `json:"fcreateorgid"`
+    FName       string `json:"fname"`
+}
+
+{
+    "FUseOrgId": "ORG001",
+    "FCreateOrgId": "ORG_ADMIN",
+    "FName": "kingdee_department"
+}
+
+CREATE TABLE kingdee_work_center (
+    fuseorgid VARCHAR(50),
+    feffectdate TIMESTAMP,
+    fname VARCHAR(100),
+    fcreateorgid VARCHAR(50),
+    foptctrlcodeid VARCHAR(50),
+    fdeptid VARCHAR(50),
+    fexpiredate TIMESTAMP
+);
+type KingdeeWorkCenter struct {
+    FUseOrgId    string    `json:"fuseorgid"`
+    FEffectDate   time.Time `json:"feffectdate"`
+    FName        string    `json:"fname"`
+    FCreateOrgId string    `json:"fcreateorgid"`
+    FOptCtrlCodeID string  `json:"foptctrlcodeid"`
+    FDeptID      string    `json:"fdeptid"`
+    FExpireDate  time.Time `json:"fexpiredate"`
+}
+{
+    "FUseOrgId": "ORG001",
+    "FEffectDate": "2023-01-01 00:00:00",
+    "FName": "kingdee_work_center",
+    "FCreateOrgId": "ORG_ADMIN",
+    "FOptCtrlCodeID": "OPT001",
+    "FDeptID": "DEPT01",
+    "FExpireDate": "2024-01-01 00:00:00"
+}
+CREATE TABLE kingdee_supplier (
+    flocaddress VARCHAR(255),
+    flocname VARCHAR(100),
+    flocmobile VARCHAR(20),
+    flocnewcontact VARCHAR(100)
+);
+
+type KingdeeSupplier struct {
+    FLocAddress     string `json:"flocaddress"`
+    FLocName        string `json:"flocname"`
+    FLocMobile      string `json:"flocmobile"`
+    FLocNewContact  string `json:"flocnewcontact"`
+}
+
+{
+    "FLocAddress": "北京市海淀区某街道",
+    "FLocName": "北京辰环手机配件有限公司",
+    "FLocMobile": "13800138000",
+    "FLocNewContact": "张三"
+}
+CREATE TABLE kingdee_plan_order (
+    fmaterialid VARCHAR(50),
+    finstockorgid VARCHAR(50),
+    fdemandorgid VARCHAR(50),
+    fplanstartdate TIMESTAMP,
+    fsupplyorgid VARCHAR(50)
+);
+
+type KingdeePlanOrder struct {
+    FMaterialId      string    `json:"fmaterialid"`
+    FInStockOrgId    string    `json:"finstockorgid"`
+    FDemandOrgId     string    `json:"fdemandorgid"`
+    FPlanStartDate   time.Time `json:"fplanstartdate"`
+    FSupplyOrgId     string    `json:"fsupplyorgid"`
+}
+
+{
+    "FMaterialId": "MATERIAL_001",
+    "FInStockOrgId": "ORG001",
+    "FDemandOrgId": "ORG002",
+    "FPlanStartDate": "2024-10-01T00:00:00Z",
+    "FSupplyOrgId": "SUPPLY_ORG"
+}
+CREATE TABLE kingdee_unit (
+    fnumber VARCHAR(50),
+    fcurrentunit VARCHAR(50),
+    foldnumber VARCHAR(50),
+    fdocumentstatus VARCHAR(100),
+    fisbaseunit BOOLEAN,
+    fisystemset BOOLEAN,
+    fname VARCHAR(100),
+    fprecision INT
+);
+
+type KingdeeUnit struct {
+    FNumber        string `json:"fnumber"`
+    FCurrentUnit   string `json:"fcurrentunit"`
+    FOldNumber     string `json:"foldnumber"`
+    FDocumentStatus string `json:"fdocumentstatus"`
+    FIsBaseUnit    bool   `json:"fisbaseunit"`
+    FIsSystemSet   bool   `json:"fisystemset"`
+    FName          string `json:"fname"`
+    FPrecision     int    `json:"fprecision"`
+}
+
+{
+    "FNumber": "UNIT001",
+    "FCurrentUnit": "个",
+    "FOldNumber": "OLD_UNIT001",
+    "FDocumentStatus": "有效",
+    "FIsBaseUnit": true,
+    "FIsSystemSet": false,
+    "FName": "个",
+    "FPrecision": 2
+}
+CREATE TABLE kingdee_customer (
+    ftradingcurrid VARCHAR(50),
+    fname VARCHAR(100),
+    fcreateorgid VARCHAR(50)
+);
+
+type KingdeeCustomer struct {
+    FTradingCurrId string `json:"ftradingcurrid"`
+    FName          string `json:"fname"`
+    FCreateOrgId   string `json:"fcreateorgid"`
+}
+
+{
+    "FTradingCurrId": "CNY",
+    "FName": "深圳辰环手机配件有限公司",
+    "FCreateOrgId": "ORG_ADMIN"
+}
+CREATE TABLE kingdee_production_order (
+    fprdorgid VARCHAR(50),
+    fownertypeid VARCHAR(50),
+    fbilltype VARCHAR(50),
+    fdate TIMESTAMP,
+    fppbomtype VARCHAR(50)
+);
+
+type KingdeeProductionOrder struct {
+    FPrdOrgId      string    `json:"fprdorgid"`
+    FOwnerTypeId   string    `json:"fownertypeid"`
+    FBillType      string    `json:"fbilltype"`
+    FDate          time.Time `json:"fdate"`
+    FPPBOMType     string    `json:"fppbomtype"`
+}
+
+{
+    "FPrdOrgId": "ORG001",
+    "FOwnerTypeId": "TYPE001",
+    "FBillType": "生产",
+    "FDate": "2024-10-01 00:00:00",
+    "FPPBOMType": "BOM_TYPE_001"
+}
+CREATE TABLE kingdee_material (
+    fcreatorid VARCHAR(50),
+    fextvar VARCHAR(50),
+    foldnumber VARCHAR(50),
+    fdescription VARCHAR(255),
+    fmaterialgroup VARCHAR(50),
+    fbaseproperty VARCHAR(50),
+    fmaterialsrc VARCHAR(50),
+    fspecification VARCHAR(100),
+    fplmmaterialid VARCHAR(50),
+    fnumber VARCHAR(50),
+    ferpclsid VARCHAR(50)
+);
+
+type KingdeeMaterial struct {
+    FCreatorId      string `json:"fcreatorid"`
+    FExtVar         string `json:"fextvar"`
+    FOldNumber      string `json:"foldnumber"`
+    FDescription    string `json:"fdescription"`
+    FMaterialGroup  string `json:"fmaterialgroup"`
+    FBaseProperty   string `json:"fbaseproperty"`
+    FMaterialSRC    string `json:"fmaterialsrc"`
+    FSpecification  string `json:"fspecification"`
+    FPLMMaterialId  string `json:"fplmmaterialid"`
+    FNumber         string `json:"fnumber"`
+    FEqpClsID       string `json:"ferpclsid"`
+}
+
+{
+    "FCreatorId": "USER001",
+    "FExtVar": "EXT_001",
+    "FOldNumber": "OLD_MATERIAL_001",
+    "FDescription": "电子元件",
+    "FMaterialGroup": "电子",
+    "FBaseProperty": "GROUP001",
+    "FMaterialSRC": "采购",
+    "FSpecification": "型号X",
+    "FPLMMaterialId": "PLM001",
+    "FNumber": "MATERIAL_001",
+    "FEqpClsID": "ATTR001"
+}
+CREATE TABLE kingdee_bom (
+    fcreateorgid VARCHAR(50),
+    fmateriaid VARCHAR(50),
+    fbomcategory VARCHAR(50),
+    fbomuse VARCHAR(50),
+    fisbaseunit BOOLEAN,
+    fisystemset BOOLEAN,
+    fname VARCHAR(100),
+    fprecision INT,
+    funitid VARCHAR(50),
+    fmateriaidchild VARCHAR(50),
+    fissuetype VARCHAR(50),
+    fownertypeid VARCHAR(50),
+    fdosagetype VARCHAR(50),
+    funitidlot VARCHAR(50),
+    fmateriaidlotbased VARCHAR(50),
+    fcobytype VARCHAR(50),
+    fmateriaidcoby VARCHAR(50)
+);
+
+type KingdeeBOM struct {
+    FCreateOrgId     string `json:"fcreateorgid"`
+    FMATERIALID      string `json:"fmateriaid"`
+    FBOMCATEGORY      string `json:"fbomcategory"`
+    FBOMUSE          string `json:"fbomuse"`
+    FIsBaseUnit      bool   `json:"fisbaseunit"`
+    FIsSystemSet     bool   `json:"fisystemset"`
+    FName            string `json:"fname"`
+    FPrecision       int    `json:"fprecision"`
+    FUNITID          string `json:"funitid"`
+    FMATERIALIDCHILD string `json:"fmateriaidchild"`
+    FISSUETYPE       string `json:"fissuetype"`
+    FOWNERTYPEID     string `json:"fownertypeid"`
+    FDOSAGETYPE      string `json:"fdosagetype"`
+    FUNITIDLOT       string `json:"funitidlot"`
+    FMATERIALIDLOTBASED string `json:"fmateriaidlotbased"`
+    FCOBYTYPE        string `json:"fcobytype"`
+    FMATERIALIDCOBY  string `json:"fmateriaidcoby"`
+}
+
+{
+    "FCreateOrgId": "ORG_ADMIN",
+    "FMATERIALID": "MATERIAL_001",
+    "FBOMCATEGORY": "类型A",
+    "FBOMUSE": "生产",
+    "FIsBaseUnit": true,
+    "FIsSystemSet": false,
+    "FName": "kingdee_bom",
+    "FPrecision": 2,
+    "FUNITID": "UNIT001",
+    "FMATERIALIDCHILD": "MATERIAL_CHILD_001",
+    "FISSUETYPE": "发料",
+    "FOWNERTYPEID": "OWNER001",
+    "FDOSAGETYPE": "用量",
+    "FUNITIDLOT": "LOT001",
+    "FMATERIALIDLOTBASED": "MATERIAL_LOT_001",
+    "FCOBYTYPE": "副产品",
+    "FMATERIALIDCOBY": "MATERIAL_COBY_001"
+}
+CREATE TABLE kingdee_employee (
+    fstaffnumber VARCHAR(50),
+    fcreateorgid VARCHAR(50),
+    fjoindate TIMESTAMP,
+    fuseorgid VARCHAR(50),
+    fname VARCHAR(100)
+);
+
+type KingdeeEmployee struct {
+    FStaffNumber string json:"fstaffnumber" 
+    FCreateOrgId string json:"fcreateorgid" 
+    FJoinDate time.Time json:"fjoindate" 
+    FUseOrgId string json:"fuseorgid" 
+    FName string json:"fname" 
+}
+
+{ 
+"FStaffNumber": "EMP001", 
+"FCreateOrgId": "ORG_ADMIN", 
+"FJoinDate": "2023-06-15 00:00:00", 
+"FUseOrgId": "ORG001", 
+"FName": "李四" 
+}

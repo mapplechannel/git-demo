@@ -1,0 +1,7 @@
+{
+    "FMaterialId": "MATERIAL_001",
+    "FInStockOrgId": "ORG001",
+    "FDemandOrgId": "ORG002",
+    "FPlanStartDate": "2024-10-01T00:00:00Z",
+    "FSupplyOrgId": "SUPPLY_ORG"
+}

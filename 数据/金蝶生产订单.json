@@ -1,0 +1,7 @@
+{
+    "FPrdOrgId": "ORG001",
+    "FOwnerTypeId": "TYPE001",
+    "FBillType": "生产",
+    "FDate": "2024-10-01 00:00:00",
+    "FPPBOMType": "BOM_TYPE_001"
+}
