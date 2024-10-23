@@ -1,0 +1,13 @@
+{
+    "recursiveflag": "0",
+    "whcode": "30",
+    "cinvcode": "01019002063",
+    "cinvname": "主板",
+    "optionalflag": "0",
+    "cwhname": "PC原材料仓",
+    "opcomponentid": "1000000009",
+    "producttype": "1",
+    "drawdeptcode": "0501",
+    "cdepname": "一车间",
+    "bomid": "1000000003"
+}

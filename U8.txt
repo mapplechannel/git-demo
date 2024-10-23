@@ -70,3 +70,145 @@ func main() {
 		log.Fatalf("Failed to run server: %v", err)
 	}
 }
+
+type U8Department struct {
+	Rank    int    `json:"rank"`
+	Name    string `json:"name"`
+	Code    string `json:"code"`
+	EndFlag int    `json:"endflag"`
+}
+CREATE TABLE u8_department (
+    rank INT,
+    name VARCHAR(255),
+    code VARCHAR(10),
+    endflag INT
+);
+type U8Supplier struct {
+	BankAccNumber int64  `json:"bank_acc_number"`
+	AbbrName      string `json:"abbrname"`
+	Name          string `json:"name"`
+	BankOpen      string `json:"bank_open"`
+	Code          string `json:"code"`
+	SortCode      string `json:"sort_code"`
+}
+CREATE TABLE u8_supplier (
+    bank_acc_number BIGINT,
+    abbrname VARCHAR(255),
+    name VARCHAR(255),
+    bank_open VARCHAR(255),
+    code VARCHAR(10),
+    sort_code VARCHAR(10)
+);
+type U8Unit struct {
+	GroupCode string `json:"group_code"`
+	Name      string `json:"name"`
+	MainFlag  int    `json:"main_flag"`
+	Code      string `json:"code"`
+}
+CREATE TABLE u8_unit (
+    group_code VARCHAR(10),
+    name VARCHAR(255),
+    main_flag INT,
+    code VARCHAR(10)
+);
+type U8CustomerData struct {
+	AbbrName     string `json:"abbrname"`
+	Name         string `json:"name"`
+	DomainCode   string `json:"domain_code"`
+	Code         string `json:"code"`
+	Industry     string `json:"industry"`
+	Contact      string `json:"contact"`
+	SortCode     string `json:"sort_code"`
+	Mobile       int64  `json:"mobile"`
+}
+CREATE TABLE u8_customer_data (
+    abbrname VARCHAR(255),
+    name VARCHAR(255),
+    domain_code VARCHAR(10),
+    code VARCHAR(10),
+    industry VARCHAR(50),
+    contact VARCHAR(50),
+    sort_code VARCHAR(10),
+    mobile BIGINT
+);
+type U8Person struct {
+	PersonGradeNo string `json:"persongradeno"`
+	DepartmentNo  string `json:"departmentno"`
+	Month         int    `json:"month"`
+	SalaryGradeNo string `json:"salarygradeno"`
+	Year          int    `json:"year"`
+	PersonName    string `json:"personname"`
+	PersonNo      string `json:"personno"`
+}
+CREATE TABLE u8_person (
+    persongradeno VARCHAR(50),
+    departmentno VARCHAR(10),
+    month INT,
+    salarygradeno VARCHAR(10),
+    year INT,
+    personname VARCHAR(255),
+    personno VARCHAR(50)
+);
+type U8ProductionOrder struct {
+	Code           string `json:"code"`
+	Name           string `json:"name"`
+	PkOrg          string `json:"pk_org"`
+	OperatorType   string `json:"operatorType"`
+}
+CREATE TABLE u8_production_order (
+    code VARCHAR(50),
+    name VARCHAR(255),
+    pk_org VARCHAR(50),
+    operator_type VARCHAR(50)
+);
+type U8Material struct {
+	RecursiveFlag   string `json:"recursiveflag"`
+	WhCode          string `json:"whcode"`
+	CinvCode        string `json:"cinvcode"`
+	CinvName        string `json:"cinvname"`
+	OptionalFlag    string `json:"optionalflag"`
+	CwhName         string `json:"cwhname"`
+	OpComponentId   string `json:"opcomponentid"`
+	ProductType     string `json:"producttype"`
+	DrawDeptCode    string `json:"drawdeptcode"`
+	CdepName        string `json:"cdepname"`
+	BomId           string `json:"bomid"`
+}
+CREATE TABLE u8_material (
+    recursiveflag VARCHAR(10),
+    whcode VARCHAR(10),
+    cinvcode VARCHAR(50),
+    cinvname VARCHAR(255),
+    optionalflag VARCHAR(10),
+    cwhname VARCHAR(255),
+    opcomponentid VARCHAR(50),
+    producttype VARCHAR(10),
+    drawdeptcode VARCHAR(10),
+    cdepname VARCHAR(255),
+    bomid VARCHAR(50)
+);
+type U8MaterialBOM struct {
+	CinvName        string `json:"cinvname"`
+	CreateUser      string `json:"createuser"`
+	Parentscrap     string `json:"parentscrap"`
+	VersionDesc     string `json:"versiondesc"`
+	BomType         string `json:"bomtype"`
+	VersionEffDate  Time.time `json:"versioneffdate"`
+	CinvCName       string `json:"cinvcname"`
+	BomId           string `json:"bomid"`
+	CinvCCode       string `json:"cinvccode"`
+}
+CREATE TABLE u8_material_bom (
+    cinvname VARCHAR(255),
+    createuser VARCHAR(50),
+    parentscrap VARCHAR(10),
+    versiondesc VARCHAR(10),
+    bomtype VARCHAR(10),
+    versioneffdate TIMESTAMP,
+    cinvcname VARCHAR(255),
+    bomid VARCHAR(50),
+    cinvccode VARCHAR(10)
+);
+
+
+
