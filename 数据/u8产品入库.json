@@ -1,0 +1,14 @@
+{
+	"date": "2014-12-31",
+	"departmentcode": "0501",
+	"warehousename": "保税仓",
+	"maker": "demo",
+	"businesstype": "成品入库",
+	"departmentname": "一车间",
+	"code": "0000000003",
+	"receivename": "出口成品入库",
+	"receivecode": "1b",
+	"auditdate": "2014-12-31",
+	"warehousecode": "37",
+	"handler": "demo"
+}

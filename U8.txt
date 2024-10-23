@@ -495,3 +495,47 @@ type KingdeeEmployee struct {
 "FUseOrgId": "ORG001", 
 "FName": "李四" 
 }
+
+
+type InventoryReceipt struct {
+    Date           time.Time `gorm:"column:date" json:"date"`
+    DepartmentCode string    `gorm:"column:departmentcode" json:"departmentcode"`
+    WarehouseName  string    `gorm:"column:warehousename" json:"warehousename"`
+    Maker          string    `gorm:"column:maker" json:"maker"`
+    BusinessType   string    `gorm:"column:businesstype" json:"businesstype"`
+    DepartmentName string    `gorm:"column:departmentname" json:"departmentname"`
+    Code           string    `gorm:"column:code" json:"code"`
+    ReceiveName    string    `gorm:"column:receivename" json:"receivename"`
+    ReceiveCode    string    `gorm:"column:receivecode" json:"receivecode"`
+    AuditDate      time.Time `gorm:"column:auditdate" json:"auditdate"`
+    WarehouseCode  string    `gorm:"column:warehousecode" json:"warehousecode"`
+    Handler        string    `gorm:"column:handler" json:"handler"`
+}
+
+func main() {
+    // 数据库连接信息
+    dsn := "host=localhost user=youruser password=yourpassword dbname=yourdbname port=5432 sslmode=disable"
+    db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+    if err != nil {
+        panic("failed to connect to database")
+    }
+
+    // 创建表
+    if err := db.AutoMigrate(&InventoryReceipt{}); err != nil {
+        panic("failed to migrate table")
+    }
+}
+
+type StockEntry struct {
+	FMaterialId    string `json:"fmaterialid"`
+	FOwnerId       string `json:"fownerid"`
+	FKeeperId      string `json:"fkeeperid"`
+	FUnitID        string `json:"funitid"`
+	FOwnerTypeId   string `json:"fownertypeid"`
+	FKeeperTypeId   string `json:"fkeepertypeid"`
+	FBaseUnitId    string `json:"fbaseunitid"`
+	FInStockType    string `json:"finstocktype"`
+	FMoBillNo      string `json:"fmobillno"`
+	FStockStatusId string `json:"fstockstatusid"`
+	FStockId       string `json:"fstockid"`
+}

@@ -1,0 +1,13 @@
+{
+    "FMaterialId": "MAT-1001",
+    "FOwnerId": "OWNER-001",
+    "FKeeperId": "KEEPER-002",
+    "FUnitID": "KG",
+    "FOwnerTypeId": "TYPE-1",
+    "FKeeperTypeId": "TYPE-A",
+    "FBaseUnitId": "BASE-KG",
+    "FInStockType": "生产入库",
+    "FMoBillNo": "PO-2024-001",
+    "FStockStatusId": "STATUS-AVAILABLE",
+    "FStockId": "WH-101"
+}
