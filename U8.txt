@@ -539,3 +539,71 @@ type StockEntry struct {
 	FStockStatusId string `json:"fstockstatusid"`
 	FStockId       string `json:"fstockid"`
 }
+
+
+func SendRetry(retryCount int, retryInterval, timeout time.Duration, url, reqbody, httpType, token, authtype string) ([]byte, error) {
+	errS := ""
+	for index := 0; index <= retryCount; index++ {
+		res, err := Send(httpType, url, reqbody, token, authtype, timeout)
+		if err == nil {
+			return res, nil
+		}
+
+		if index != 0 {
+			errS += "|" + err.Error()
+		} else {
+			errS += err.Error()
+		}
+		time.Sleep(retryInterval)
+	}
+	return nil, errors.New("send err:" + errS)
+}
+
+func Send(httpType, url, reqBody, token, authtype string, timeout time.Duration) ([]byte, error) {
+	logger.Info("timeout:%v", timeout)
+	client := &http.Client{
+		Transport: &http.Transport{
+			Dial: func(netw, addr string) (net.Conn, error) {
+				conn, err := net.DialTimeout(netw, addr, timeout)
+				if err != nil {
+					return nil, err
+				}
+
+				_ = conn.SetDeadline(time.Now().Add(timeout))
+				return conn, nil
+			},
+			ResponseHeaderTimeout: timeout,
+		},
+	}
+
+	logger.Info("reqBody:%v", reqBody)
+
+	requestDO, err := http.NewRequest(httpType, url, strings.NewReader(reqBody))
+	if err != nil {
+		logger.Info("err is:%v", err)
+		return nil, errors.New("http err" + err.Error())
+	}
+
+	if token != "" {
+		logger.Info("add token")
+		requestDO.Header.Add(authtype, token)
+	}
+
+	requestDO.Header.Add("Content-Type", "application/json")
+
+	res, err := client.Do(requestDO)
+	if err != nil {
+		logger.Info("err is:%v", err)
+		return nil, errors.New("http err" + err.Error())
+	}
+	defer res.Body.Close()
+
+	data, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		logger.Info("err is:%v", err)
+		return nil, errors.New("readall err" + err.Error())
+	}
+
+	return data, nil
+
+}
