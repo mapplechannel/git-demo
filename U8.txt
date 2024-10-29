@@ -607,3 +607,52 @@ func Send(httpType, url, reqBody, token, authtype string, timeout time.Duration)
 	return data, nil
 
 }
+
+func StartJobs() {
+	hsmTemplate := os.Getenv("HSM_TEMPLATE")
+
+	logger.Info("hsmTemplate is :%v", hsmTemplate)
+	var tasks []vo.UpdateJob
+	if hsmTemplate == "single" {
+		// 单机下，使用当前节点，执行非IOIT作业
+		err := jobschedule.GlobalDb.Table("hsm_scheduling.tasks").Where("status = ?", "1").Find(&tasks).Error
+		if err != nil {
+			logger.Info("err is :%v", err)
+		}
+		// 获取数据库中状态为1的作业ID
+		for i := range tasks {
+			jobkey := vo.GetID{
+				ID: tasks[i].ID,
+			}
+			requestBody, err := json.Marshal(jobkey)
+			if err != nil {
+				logger.Info("Fail to mapping:%v", err)
+			}
+			ip := util.ServerCode + constants.DomainName
+			req, err := http.NewRequest("POST", constants.Http+ip+":6222/api/hsm-ds/task/run", bytes.NewBuffer(requestBody))
+			if err != nil {
+				logger.Info("Fail to send request:%v", err)
+			}
+			req.Header.Set("Content-Type", "application/json")
+			client := &http.Client{}
+			resp, err := client.Do(req)
+			if err != nil {
+				logger.Info("Failed to excute job:%v", err)
+			} else {
+				defer resp.Body.Close()
+				if resp.StatusCode != http.StatusOK {
+					logger.Info("Failed to excute job:%v", err)
+				}
+				body, err := ioutil.ReadAll(resp.Body)
+				if err != nil {
+					logger.Info("Failed to excute job:%v", err)
+				}
+				logger.Info("body:%v", string(body))
+			}
+		}
+		// }
+
+		// if hsmTemplate == "double-integ-manifest" {
+		// 	// 如果只有一个挂掉，怎么判断，
+	}
+}
