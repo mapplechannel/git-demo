@@ -1,0 +1,38 @@
+<nsl:pushWorkOrderData xmlns:tns="http://service.webserviceDemo.example.com">
+    <workOrderData>
+        <cmdTime>2014-08-04</cmdTime>
+        <cs/>
+        <isDelete/>
+        <matCode/>
+        <matDesc>扩展</matDesc>
+        <orderBatch/>
+        <orderNo>14000069</orderNo>
+        <orderNum>1.000</orderNum>
+        <orderType>H001</orderType>
+        <planEndtime>20140807 000000</planEndtime>
+        <planStarttime>20140807 000000</planStarttime>
+        <plant>1100</plant>
+        <processCode>0000055692</processCode>
+        <sapOrderStatus>下达</sapOrderStatus>
+        <unit>PCS</unit>
+        <workOrderBomList>
+            <workOrderBom>
+                <isDelete>1</isDelete>
+                <level>00</level>
+                <lineNum>00000003</lineNum>
+                <matCode>1050101608</matCode>
+                <matNum>4.000</matNum>
+                <matSpec/>
+                <matUnit>PCS</matUnit>
+                <orderNo>14000069</orderNo>
+                <replaceGroup/>
+            </workOrderBom>
+        </workOrderBomList>
+        <workOrderSnList>
+            <workOrderSn>
+                <orderNo>140000069</orderNo>
+                <snNo>100026416</snNo>
+            </workOrderSn>
+        </workOrderSnList>
+    </workOrderData>
+</nsl:pushWorkOrderData>
