@@ -1,0 +1,429 @@
+[
+  {
+    "id": 1,
+    "projectId": "f07694d646b7472daa666bffc5dfa7da",
+    "nodeCode": "e1",
+    "nodeName": "11",
+    "vip1": "",
+    "vip2": "",
+    "groupname": "111",
+    "type": "normal",
+    "appsetsInfos": [
+      {
+        "appsets": "Installation Deployment",
+        "gVersion": "0.13.1",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-install-front",
+            "name": "Deployment Tool Frontend Service",
+            "version": "0.13.1",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "Installation and deployment",
+        "gVersion": "0.13.1",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-install",
+            "name": "deployment tool",
+            "version": "0.13.1",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "Portal Model",
+        "gVersion": "0.13.2",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-portal-utils-back-end",
+            "name": "Portal Utils Back End",
+            "version": "0.13.2",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "Project Configuration Environment",
+        "gVersion": "0.13.2",
+        "gInstallStatus": 4,
+        "gRunStatus": 1,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 1,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-eng-back-end",
+            "name": "eng backend service",
+            "version": "0.13.2",
+            "installStatus": 4,
+            "runStatus": 1,
+            "installationProgress": 100
+          },
+          {
+            "id": "hsm-eng-front-end",
+            "name": "eng frontend service",
+            "version": "0.13.2",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "influxdb数据库",
+        "gVersion": "0.12.2",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "influxdb",
+            "name": "influxdb",
+            "version": "0.12.2",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "postgresql数据库",
+        "gVersion": "0.13.1",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "postgresql14.8",
+            "name": "PostgreSQL数据库",
+            "version": "0.13.1",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "redis",
+        "gVersion": "0.12.6",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "redis-6.2.11",
+            "name": "redis数据库",
+            "version": "0.12.6",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "中间件代理服务",
+        "gVersion": "0.13.1",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-mw-back-proxy",
+            "name": "中间件代理服务",
+            "version": "0.13.1",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "中间件消息服务",
+        "gVersion": "0.13.2",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-mw-msg",
+            "name": "消息后端服务",
+            "version": "0.13.2",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "中间件网关服务",
+        "gVersion": "0.13.1",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-mw-back-gateway",
+            "name": "中间件网关",
+            "version": "0.13.1",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "事件服务",
+        "gVersion": "0.13.1",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "event-svc",
+            "name": "事件服务",
+            "version": "0.13.1",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "基础服务",
+        "gVersion": "2.1.3",
+        "gInstallStatus": 4,
+        "gRunStatus": -1,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": -1,
+        "applistRecordInfos": [
+          {
+            "id": "java-common-dep",
+            "name": "java公共依赖",
+            "version": "2.1.3",
+            "installStatus": 4,
+            "runStatus": -1,
+            "installationProgress": 100
+          },
+          {
+            "id": "nodejs-common-dep",
+            "name": "nodejs公共依赖",
+            "version": "1.0.1",
+            "installStatus": 4,
+            "runStatus": -1,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "审计日志服务",
+        "gVersion": "0.13.1",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "audit-log",
+            "name": "审计日志服务",
+            "version": "0.13.1",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "密钥下载服务",
+        "gVersion": "1.0.7",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "kms-service",
+            "name": "kms-service",
+            "version": "1.0.7",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "应用工具",
+        "gVersion": "0.13.1",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-portal-utils-front-end",
+            "name": "HSM-PORTAL应用工具前端",
+            "version": "0.13.1",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "文件服务",
+        "gVersion": "0.12.2",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "file-svc",
+            "name": "文件服务",
+            "version": "0.12.2",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "权限后端服务",
+        "gVersion": "0.13.2",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-auth-back-end",
+            "name": "权限服务",
+            "version": "0.13.2",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "签名验签服务",
+        "gVersion": "1.0.2",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-sign-service",
+            "name": "hsm-sign-service",
+            "version": "1.0.2",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "算法组态服务",
+        "gVersion": "0.13.1",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "count-svc",
+            "name": "算法组态服务",
+            "version": "0.13.1",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "统一图标服务",
+        "gVersion": "0.4.6",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-iconify",
+            "name": "统一图标服务",
+            "version": "0.4.6",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      },
+      {
+        "appsets": "统一门户",
+        "gVersion": "0.13.2",
+        "gInstallStatus": 4,
+        "gRunStatus": 0,
+        "gInstallationProgress": 100,
+        "rInstallStatus": 4,
+        "rsRunStatus": 0,
+        "applistRecordInfos": [
+          {
+            "id": "hsm-portal-front-end",
+            "name": "HSM-OS统一门户前端服务",
+            "version": "0.13.2",
+            "installStatus": 4,
+            "runStatus": 0,
+            "installationProgress": 100
+          }
+        ]
+      }
+    ]
+  }
+]
