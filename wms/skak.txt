@@ -427,3 +427,64 @@
     ]
   }
 ]
+
+
+"influxdb数据库": "InfluxDB Database",
+		"postgresql数据库": "PostgreSQL Database",
+		"redis": "Redis",
+		"中间件代理服务": "Middleware Proxy Service",
+		"中间件消息服务": "Middleware Messaging Service",
+		"中间件网关服务": "Middleware Gateway Service",
+		"事件服务": "Event Service",
+		"基础服务": "Basic Services",
+		"审计日志服务": "Audit Log Service",
+		"密钥下载服务": "Key Download Service",
+		"应用工具": "Application Tools",
+		"文件服务": "File Service",
+		"权限后端服务": "Authorization Backend Service",
+		"签名验签服务": "Signature Verification Service",
+		"算法组态服务": "Algorithm Configuration Service",
+		"统一图标服务": "Unified Icon Service",
+		"统一门户": "Unified Portal",
+
+
+// 假设这是你的原始 map
+	originalMap := map[string]string{
+		"service1": "influxdb数据库",
+		"service2": "postgresql数据库",
+		"service3": "中间件代理服务",
+		"service4": "未翻译服务",
+	}
+
+	// 定义翻译映射
+	translationMap := map[string]string{
+		"influxdb数据库":         "InfluxDB Database",
+		"postgresql数据库":       "PostgreSQL Database",
+		"redis":                "Redis",
+		"中间件代理服务":         "Middleware Proxy Service",
+		"中间件消息服务":         "Middleware Messaging Service",
+		"中间件网关服务":         "Middleware Gateway Service",
+		"事件服务":              "Event Service",
+		"基础服务":              "Basic Services",
+		"审计日志服务":          "Audit Log Service",
+		"密钥下载服务":          "Key Download Service",
+		"应用工具":              "Application Tools",
+		"文件服务":              "File Service",
+		"权限后端服务":          "Authorization Backend Service",
+		"签名验签服务":          "Signature Verification Service",
+		"算法组态服务":          "Algorithm Configuration Service",
+		"统一图标服务":          "Unified Icon Service",
+		"统一门户":              "Unified Portal",
+	}
+
+	// 遍历 originalMap，替换值
+	for key, value := range originalMap {
+		if translated, exists := translationMap[value]; exists {
+			originalMap[key] = translated
+		}
+	}
+
+	// 输出结果
+	for key, value := range originalMap {
+		fmt.Printf("Key: %s, Value: %s\n", key, value)
+	}
