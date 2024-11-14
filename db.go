@@ -139,3 +139,47 @@ func executeSQLFile(db *sql.DB, file io.Reader) error {
 	}
 	return nil
 }
+
+
+type CreateJobRequest struct {
+	JobKeyInfo
+	JobDetailInfo
+}
+
+type JobKeyInfo struct {
+	NameSpace string `gorm:"type:varchar(255);column:namespace" json:"namespace"`
+	SKNode    string `gorm:"type:varchar(255);column:s_node" json:"s_node"`
+	Code      string `gorm:"type:varchar(255);column:code" json:"code"`
+}
+
+type JobDetailInfo struct {
+	Name            string  `gorm:"type:varchar(255);column:name" json:"name"`
+	Describe        string  `gorm:"type:varchar(255);column:describe" json:"describe"`
+	Schedule        string  `gorm:"type:varchar(255);column:schedule" json:"schedule"`
+	ScheduleDetails string  `gorm:"type:varchar(255);column:schedule_details" json:"schedule_details"`
+	ScheduleCycle   string  `gorm:"type:varchar(255);column:schedule_cycle" json:"schedule_cycle"`
+	ScheduleUnit    string  `gorm:"type:varchar(255);column:schedule_unit" json:"schedule_unit"`
+	Content         Content `gorm:"type:jsonb;column:content" json:"content"`
+	CronId          string  `gorm:"type:varchar(255);column:cron_id" json:"cron_id"`
+	IsHttp          bool    `gorm:"type:bool;column:is_http" json:"is_http"`
+	Canvas          Canvas  `gorm:"type:jsonb;column:canvas" json:"canvas"`
+	JobType         string  `gorm:"type:varchar(255);column:job_type" json:"job_type"`
+	JobClass        string  `gorm:"type:varchar(255);column:job_class" json:"job_class"`
+	Template        string  `gorm:"type:varchar(255);column:template" json:"template"`
+	Id              string  `gorm:"type:varchar(255);column:id;primaryKey:false" json:"id"`
+	Status          int     `gorm:"type:int;column:status" json:"status"`
+	CreateTime      string  `gorm:"type:varchar(255);column:create_time" json:"create_time"`
+	EditeTime       string  `gorm:"type:varchar(255);column:edite_time" json:"edite_time"`
+	CreateUse       string  `gorm:"type:varchar(255);column:create_user" json:"create_user"`
+	IsAutoSelectId  bool    `gorm:"type:bool;column:is_auto_select_id" json:"is_auto_select_id"`
+	CronDetail      CronExp `gorm:"type:jsonb;column:cron_detail" json:"cron_detail"`
+	PeriodDetail    Period  `gorm:"type:jsonb;column:period_detail" json:"period_detail"`
+}
+
+type JobNode struct {
+	NameSpace string `gorm:"type:varchar(255);column:namespace" json:"namespace"`
+	StartNode string `gorm:"type:varchar(255);column:startnode" json:"startnode"`
+	Code      string `gorm:"type:varchar(255);column:code" json:"code"`
+	StopNode  string `gorm:"type:varchar(255);column:stopnode" json:"stopnode"`
+}
+
