@@ -183,3 +183,20 @@ type JobNode struct {
 	StopNode  string `gorm:"type:varchar(255);column:stopnode" json:"stopnode"`
 }
 
+type BusinessDataReq struct {
+	ID   string `gorm:"type:varchar(255);column:id" json:"id"`
+	Data string `gorm:"type:text;column:data" json:"data"`
+}
+
+type ComponentDb struct {
+	Label          string `gorm:"type:varchar(255);column:label" json:"label"`
+	Value          string `gorm:"type:varchar(255);column:value" json:"value"`
+	NodeType       string `gorm:"type:varchar(255);column:node_type" json:"node_type"`
+	NodeMark       string `gorm:"type:varchar(255);column:node_mark" json:"node_mark"`
+	Img            string `gorm:"type:varchar(255);column:img" json:"img"`
+	NoConfigMsg    string `gorm:"type:varchar(255);column:no_config_msg" json:"no_config_msg"`
+	NodeData       string `gorm:"type:varchar(255);column:node_data" json:"node_data"`
+	CateKey        string `gorm:"type:varchar(255);column:cate_key" json:"cate_key"`
+	ApplicableType string `gorm:"type:varchar(255);column:applicable_type" json:"applicable_type"`
+	ApiType        string `gorm:"type:varchar(255);column:api_type" json:"api_type"`
+}
