@@ -1,0 +1,117 @@
+CREATE TABLE `ems_meter_data` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `meter_time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' COMMENT '采集周期时刻',
+  `meter_code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '计量点编码',
+  `medium_code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '介质类型code',
+  `dept_code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '所属部门',
+  `last_read` decimal(18,2) DEFAULT NULL COMMENT '上次抄表底数',
+  `current_read` decimal(18,2) DEFAULT NULL COMMENT '本次抄表底数',
+  `meter_num` decimal(18,2) DEFAULT NULL COMMENT '计量使用量',
+  `correct_num` decimal(18,2) DEFAULT NULL COMMENT '修正使用量',
+  `valarm` decimal(18,2) DEFAULT NULL COMMENT '超差报警设定值',
+  `overproof` decimal(18,2) DEFAULT NULL COMMENT '超差值',
+  `price` decimal(18,2) DEFAULT NULL COMMENT '单价',
+  `submit_id` int DEFAULT NULL COMMENT '提交人',
+  `has_submit` bit(1) DEFAULT NULL COMMENT '是否提交',
+  `collect_status` int DEFAULT NULL COMMENT '采集状态',
+  `create_id` int DEFAULT NULL COMMENT 'create_id',
+  `create_time` datetime DEFAULT NULL COMMENT 'create_time',
+  `update_id` int DEFAULT NULL COMMENT 'update_id',
+  `update_time` datetime DEFAULT NULL COMMENT 'update_time',
+  PRIMARY KEY (`id`,`meter_time`) USING BTREE,
+  KEY `idx_ems_meter_data_meter_code` (`meter_code`) USING BTREE,
+  KEY `idx_ems_meter_data_dept_code` (`dept_code`) USING BTREE,
+  KEY `idx_ems_meter_data_submit_id` (`submit_id`) USING BTREE,
+  KEY `idx_ems_meter_data_collect_status` (`collect_status`) USING BTREE,
+  KEY `idx_ems_meter_data_has_submit` (`has_submit`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=5363776 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC COMMENT='计量数据'
+/*!50500 PARTITION BY RANGE  COLUMNS(meter_time)
+(PARTITION p3 VALUES LESS THAN ('2023-01-01') ENGINE = InnoDB,
+ PARTITION p4 VALUES LESS THAN ('2024-01-01') ENGINE = InnoDB,
+ PARTITION p5 VALUES LESS THAN ('2025-01-01') ENGINE = InnoDB,
+ PARTITION p6 VALUES LESS THAN ('2026-01-01') ENGINE = InnoDB,
+ PARTITION p7 VALUES LESS THAN ('2027-01-01') ENGINE = InnoDB,
+ PARTITION p8 VALUES LESS THAN ('2028-01-01') ENGINE = InnoDB,
+ PARTITION p9 VALUES LESS THAN ('2029-01-01') ENGINE = InnoDB,
+ PARTITION p10 VALUES LESS THAN ('2030-01-01') ENGINE = InnoDB,
+ PARTITION p11 VALUES LESS THAN ('2031-01-01') ENGINE = InnoDB,
+ PARTITION p12 VALUES LESS THAN ('2032-01-01') ENGINE = InnoDB,
+ PARTITION p13 VALUES LESS THAN ('2033-01-01') ENGINE = InnoDB,
+ PARTITION p14 VALUES LESS THAN ('2034-01-01') ENGINE = InnoDB,
+ PARTITION p15 VALUES LESS THAN ('2035-01-01') ENGINE = InnoDB,
+ PARTITION p16 VALUES LESS THAN ('2036-01-01') ENGINE = InnoDB,
+ PARTITION p17 VALUES LESS THAN (MAXVALUE) ENGINE = InnoDB) */;
+
+
+ INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (1, '2024-09-29 16:30:00', 'DQG.ActivePsum', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (3, '2024-09-29 16:30:00', 'DQG.ReactQ1', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (5, '2024-09-29 16:30:00', 'DQG.ReactQ2', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (7, '2024-09-29 16:30:00', 'DQG.ReactQ3', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (9, '2024-09-29 16:30:00', 'DQG.ReactQsum', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (11, '2024-09-29 16:30:00', 'DQG.ApparentS1', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (13, '2024-09-29 16:30:00', 'DQG.ApparentS2', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (15, '2024-09-29 16:30:00', 'DQG.ApparentS3', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (17, '2024-09-29 16:30:00', 'DQG.ApparentSsum', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (19, '2024-09-29 16:30:00', 'DQG.PowerF1', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (21, '2024-09-29 16:30:00', 'DQG.PowerF2', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (23, '2024-09-29 16:30:00', 'DQG.PowerF3', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (25, '2024-09-29 16:30:00', 'DQG.PowerF', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (27, '2024-09-29 16:30:00', 'DQG.Unbl_U', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (29, '2024-09-29 16:30:00', 'DQG.Unbl_I', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (31, '2024-09-29 16:30:00', 'DQG.Tag33', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (33, '2024-09-29 16:30:00', 'DQG.Dmd_ActiveP', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (35, '2024-09-29 16:30:00', 'DQG.Dmd_ReactQ', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (37, '2024-09-29 16:30:00', 'DQG.Dmd_AppS', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (39, '2024-09-29 16:30:00', 'DQG.Ep_imp-H', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (41, '2024-09-29 16:30:00', 'DQG.Ep_exp-H', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (43, '2024-09-29 16:30:00', 'DQG.Eq_imp-H', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (45, '2024-09-29 16:30:00', 'DQG.Eq_exp-H', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (47, '2024-09-29 16:30:00', 'DQG.Ep_total-H', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (49, '2024-09-29 16:30:00', 'DQG.Ep_total-L', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (51, '2024-09-29 16:30:00', 'DQG.Eq_total-H', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (53, '2024-09-29 16:30:00', 'DQG.Eq_total-L', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (55, '2024-09-29 16:30:00', 'DQG.SystemF', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (57, '2024-09-29 16:30:00', 'DQG.xiangV1', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (59, '2024-09-29 16:30:00', 'DQG.xiangV2', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (61, '2024-09-29 16:30:00', 'DQG.xiangV3', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (63, '2024-09-29 16:30:00', 'DQG.xiangVavg', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (65, '2024-09-29 16:30:00', 'DQG.LineV12', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (67, '2024-09-29 16:30:00', 'DQG.LineV23', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+INSERT INTO `momeadb`.`ems_meter_data` (`id`, `meter_time`, `meter_code`, `medium_code`, `dept_code`, `last_read`, `current_read`, `meter_num`, `correct_num`, `valarm`, `overproof`, `price`, `submit_id`, `has_submit`, `collect_status`, `create_id`, `create_time`, `update_id`, `update_time`) VALUES (69, '2024-09-29 16:30:00', 'DQG.LineV31', 'electricity2', '电脑名称：BJDZMESAPP01', 0.00, 0.00, 0.00, 0.00, NULL, 0.00, 1.00, NULL, NULL, 0, NULL, '2024-09-29 16:40:02', NULL, NULL);
+
+SELECT sum(d.correct_num) from ems_meter_data d where d.`meter_code`='ZM2.Ep_total-H'
+AND DATE_FORMAT(d.meter_time, '%Y-%m') = DATE_FORMAT(CURDATE(), '%Y-%m');
